@@ -76,7 +76,7 @@
 
     export default {
         methods: {
-            open (index, items, options = {
+            open (target, index, items, options = {
                 // captionEl: false,
                 fullscreenEl: true,
                 history: false,
@@ -86,12 +86,11 @@
                 const opts = Object.assign({
                     index: index,
                     getThumbBoundsFn (index) {
-                        const thumbnail = document.querySelectorAll('.preview-img-item')[index]
                         const pageYScroll = window.pageYOffset
                                 || document.documentElement.scrollTop
                                 || document.body.scrollTop
                                 || 0
-                        const rect = thumbnail.getBoundingClientRect()
+                        const rect = target.getBoundingClientRect()
                         return {
                             x: rect.left,
                             y: rect.top + pageYScroll,
