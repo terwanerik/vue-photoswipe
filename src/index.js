@@ -12,8 +12,8 @@ export default {
         }
 
         Vue.$photoswipe = {
-            open (index, items, options) {
-                $vm.open(index, items, options)
+            open (target, index, items, options) {
+                $vm.open(target, index, items, options)
             },
             close () {
                 $vm.close()
